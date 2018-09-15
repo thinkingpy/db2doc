@@ -1,0 +1,3 @@
+# requirements
+pymysql
+python-docx
