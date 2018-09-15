@@ -74,11 +74,11 @@ class Db2Doc(object):
             self.writeTable(fds)
         db.close()
 
-        self.document.save('数据库设计文档.docx')
+        self.document.save('../output/数据库设计文档.docx')
         print('======>文档生成完成.')
 
 
 doc=Db2Doc()
 
-doc.gen()
+doc.gen_doc()
 
