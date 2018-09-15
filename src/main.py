@@ -1,20 +1,16 @@
 from docx import Document
 from docx.shared import Pt,RGBColor,Inches
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
+import datetime
 from db import Db
-
-# 参考
-# https://blog.csdn.net/lq18050010830/article/details/78851180
-# https://blog.csdn.net/sinat_30711195/article/details/80725435
-#  select table_name,table_comment from information_schema.tables where table_schema = 'ypkdb'
-# SHOW FULL FIELDS FROM ypkdb.tb_instore
 
 class Db2Doc(object):
 
     def __init__(self):
         self.document=Document()
         self.document.add_heading('数据库设计文档', 0)
-        self.document.add_paragraph('2018-09-14')
+        gen_date=datetime.datetime.now().strftime('%Y-%m-%d')
+        self.document.add_paragraph(gen_date)
         self.document.styles['Normal'].font.name = u'宋体'
 
         self.except_tables=[]

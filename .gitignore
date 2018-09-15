@@ -111,3 +111,6 @@ output/
 
 # my db settings
 settings_local.py
+
+# my doc
+doc.md

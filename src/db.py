@@ -1,9 +1,12 @@
 import pymysql
+import logging
 from settings import *
+logging.basicConfig(level=logging.NOTSET)
 
 class Db(object):
 
     def __init__(self):
+        logging.debug('DATABASES==>'+str(DATABASES))
         self.conn=pymysql.connect(**DATABASES)
         self.a_conn=self.conn.cursor()
         self.a_conn.execute('set names utf8')
@@ -13,12 +16,20 @@ class Db(object):
 
     def getTables(self):
         self.a_conn.execute(self.sql_tables)
+        logging.debug('getTables sql==>'+self.sql_tables)
+
         rst = self.a_conn.fetchall()
+        logging.debug('getTables data==>'+str(rst))
+
         return rst
 
     def getFullFields(self,tb_name):
-        self.a_conn.execute(self.sql_full_fields %(DATABASES['db'],tb_name))
+        sql=self.sql_full_fields %(DATABASES['db'],tb_name)
+        logging.debug('getTables sql==>'+sql)
+        self.a_conn.execute(sql)
         rst = self.a_conn.fetchall()
+        logging.debug('getTables data==>'+str(rst))
+
         return rst
 
     def close(self):
