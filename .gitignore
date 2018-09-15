@@ -102,3 +102,12 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# output
+output/
+
+# pycharm ide
+.idea/
+
+# my db settings
+settings_local.py
