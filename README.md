@@ -2,8 +2,8 @@
 一个简单的数据库（MySQL）文档生成工具
 
 # 运行环境
-运行环境 python3.x
-
+1、 python3.x
+2、 MySQL 
 
 # 如何使用
 
