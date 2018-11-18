@@ -10,6 +10,9 @@
 1、安装依赖
 >  pip install -r requirements.txt
 
-2、运行
+2、配置数据库
+根据自己的需要，配置数据库信息
+
+3、运行
 > python main.py 
 
