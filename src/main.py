@@ -4,6 +4,12 @@ from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 import datetime
 from db import Db
 
+````
+Db2Doc 
+1.实现MySQL数据结构读取
+2.过滤掉视图和以demo开头的表
+3.生产 docx 格式 word 文档
+````
 class Db2Doc(object):
 
     def __init__(self):
